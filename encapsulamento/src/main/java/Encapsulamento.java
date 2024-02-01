@@ -11,6 +11,8 @@
  * classe parte interna da capsula...
  * interface parte externa da capsula...
  *      vantagens -- 1)torna mudanças invisíveis, 2)facilita a reutilização de códigos 3)reduz os efeitos colaterais
+ * 
+ * 
  *      
  * 
  * Polimorfismo
@@ -31,6 +33,26 @@
 public class Encapsulamento {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        ControleRemoto controle1 = new ControleRemoto();
+        
+        controle1.ligar();
+        controle1.play();
+        controle1.aumentarVolume();
+        
+        System.out.println("");
+        controle1.abrirMenu();
+        System.out.println("");
+        
+        controle1.fecharMenu();        
+        controle1.ativarMudo();
+        
+        System.out.println("");
+        controle1.abrirMenu();
+        System.out.println("");
+        
+        controle1.fecharMenu();
+        controle1.desativarMudo();
+        controle1.desligar();
+        
     }
 }
