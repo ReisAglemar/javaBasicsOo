@@ -1,5 +1,6 @@
 package meuPacote;
 
+
 /**
  *
  * @author reis
@@ -35,6 +36,7 @@ public class MuchaLuchaMain {
         for (LutadoresClasse objeto : lutadores) {
             //System.out.println(objeto);
             objeto.apresentar();
-        }
+            objeto.status();
+        }        
     }
 }

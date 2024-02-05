@@ -10,11 +10,10 @@ public class LutadoresClasse implements LutadoresFazem {
     private int idade, vitorias, derrotas, empates;
     private float altura, peso;
 
-    public static final int LUTADOR_ABAIXO_PESO = 0;
-    public static final float PESO_LEVE_MINIMO = 52.2f;
-    public static final float PESO_LEVE_MAXIMO = 70.3f;
-    public static final float PESO_MEDIO_MAXIMO = 93.9f;
-    public static final float PESO_PESADO_MAXIMO = 120.2f;
+    private static final float PESO_LEVE_MINIMO = 52.2f;
+    private static final float PESO_LEVE_MAXIMO = 70.3f;
+    private static final float PESO_MEDIO_MAXIMO = 93.9f;
+    private static final float PESO_PESADO_MAXIMO = 120.2f;
 
     // construtor --------------------------------------------------------------
     public LutadoresClasse(String nome, String nacionalidade, int idade,
@@ -23,11 +22,10 @@ public class LutadoresClasse implements LutadoresFazem {
         this.nacionalidade = nacionalidade;
         this.idade = idade;
         this.altura = altura;
-        this.peso = peso;
         this.vitorias = vitorias;
         this.derrotas = derrotas;
         this.empates = empates;
-        setCategoria();
+        setPeso(peso);
     }
 
     // setters -----------------------------------------------------------------
@@ -52,7 +50,8 @@ public class LutadoresClasse implements LutadoresFazem {
         setCategoria();
     }
 
-    public void setCategoria() {
+    //acesso apenas pela classe, atributo definido automaticamnete a partir do peso
+    private void setCategoria() {
 
         // baseado no peso definide automaticamente a categoria
         if (peso > PESO_LEVE_MINIMO && peso <= PESO_LEVE_MAXIMO) {
@@ -61,21 +60,23 @@ public class LutadoresClasse implements LutadoresFazem {
         } else if (peso > PESO_LEVE_MAXIMO && peso <= PESO_MEDIO_MAXIMO) {
             this.categoria = "Médio";
 
-        } else if (peso > PESO_MEDIO_MAXIMO) {
+        } else if (peso > PESO_MEDIO_MAXIMO && peso <= PESO_PESADO_MAXIMO) {
             this.categoria = "Pesado";
 
         } else {
-            System.out.println("O lutador " + getNome() + " não tem o peso mínimo"
+            System.out.println("O lutador " + getNome() + " não tem o peso correto"
                     + " necessário para lutar!");
             System.out.println("");
             System.out.println("Peso mínimo necessário: " + PESO_LEVE_MINIMO + " Kg.");
             System.out.println("");
-            System.out.println("Peso do " + getNome() + ", " + getPeso() + " Kg.");
+            System.out.println("Peso máximo necessário: " + PESO_PESADO_MAXIMO + " Kg.");
+            System.out.println("");
+            System.out.println(getNome() + " pesa: " + getPeso() + " Kg.");
             System.out.println("");
             System.out.println("        ATENÇÃO !!!");
             System.out.println("");
             System.out.println("O lutador " + getNome() + " será desclassificado!");
-            categoria = "DESCLASSIFICADO!";
+            this.categoria = "DESCLASSIFICADO!";
         }
     }
 
