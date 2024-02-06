@@ -5,6 +5,6 @@ package meuPacote;
  * @author reis
  */
 public interface LutaFaz {
-    public abstract void marcarLuta();
-    public abstract void lutar();
+    public void marcarLuta(LutadoresClasse desafiado, LutadoresClasse desafiante);
+    public void lutar(LutadoresClasse desafiado, LutaClasse dasafiante);
 }
