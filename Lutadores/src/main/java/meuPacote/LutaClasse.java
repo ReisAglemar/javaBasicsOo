@@ -1,4 +1,3 @@
-
 package meuPacote;
 
 /**
@@ -6,20 +5,23 @@ package meuPacote;
  * @author reis
  */
 public class LutaClasse implements LutaFaz{
-    private String desafiado, desafiante;
+
+    private LutadoresClasse desafiado, desafiante;
     private int rounds;
     private boolean aprovada;
 
     // construtor --------------------------------------------------------------
-    public LutaClasse(){
+    public LutaClasse(LutadoresClasse desafiado, LutadoresClasse desafiante) {
+        this.desafiado = desafiado;
+        this.desafiante = desafiante;
     }
-    
+
     // setters -----------------------------------------------------------------
-    public void setDesafiado(String desafiado) {
+    public void setDesafiado(LutadoresClasse desafiado) {
         this.desafiado = desafiado;
     }
 
-    public void setDesafiante(String desafiante) {
+    public void setDesafiante(LutadoresClasse desafiante) {
         this.desafiante = desafiante;
     }
 
@@ -30,13 +32,13 @@ public class LutaClasse implements LutaFaz{
     public void setAprovada(boolean aprovada) {
         this.aprovada = aprovada;
     }
-    
+
     // getters -----------------------------------------------------------------
-    public String getDesafiado() {
+    public LutadoresClasse getDesafiado() {
         return desafiado;
     }
 
-    public String getDesafiante() {
+    public LutadoresClasse getDesafiante() {
         return desafiante;
     }
 
@@ -47,13 +49,19 @@ public class LutaClasse implements LutaFaz{
     public boolean isAprovada() {
         return aprovada;
     }
-    
+
     // Métodos especiasi -------------------------------------------------------
+
     @Override
-    public void marcarLuta() {
+    public void marcarLuta(LutadoresClasse desafiado, LutadoresClasse desafiante) {
+         if (desafiado.getCategoria().equals(desafiante.getCategoria())) {
+            System.out.println("são iguais");
+        } else {
+             System.out.println("são diferentes");
+        }
     }
 
     @Override
-    public void lutar() {
+    public void lutar(LutadoresClasse desafiado, LutaClasse dasafiante) {
     }
 }
