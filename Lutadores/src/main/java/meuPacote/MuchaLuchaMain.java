@@ -33,16 +33,17 @@ public class MuchaLuchaMain {
                 "EUA", 30, 1.81f, 105.7f, 12, 2, 4);
         
         
-            //tipo     nomeControle : nomeVetor
+              //tipo     nomeControle : nomeVetor
         /*for (LutadoresClasse objeto : lutadores) {
             //System.out.println(objeto);
             objeto.apresentar();
             objeto.status();       
         }*/
         
-        LutaClasse combate = new LutaClasse(lutadores[0], lutadores[1]);
+        LutaClasse combate = new LutaClasse();
        
-        combate.marcarLuta(lutadores[0], lutadores[3]);
+        combate.marcarLuta(lutadores[0], lutadores[1]);
+        combate.lutar();
         
     }
 }
