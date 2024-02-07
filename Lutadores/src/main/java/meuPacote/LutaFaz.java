@@ -6,5 +6,5 @@ package meuPacote;
  */
 public interface LutaFaz {
     public void marcarLuta(LutadoresClasse desafiado, LutadoresClasse desafiante);
-    public void lutar(LutadoresClasse desafiado, LutaClasse dasafiante);
+    public void lutar();
 }
