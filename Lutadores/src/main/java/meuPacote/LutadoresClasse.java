@@ -209,8 +209,8 @@ public class LutadoresClasse implements LutadoresFazem {
         System.out.println("");
         System.out.println("---------------------- RESULTADO DA LUTA ----------------------");
         System.out.println("");
-        System.out.println("    O lutador " + getNome() + " emaptou uma luta.");
-        System.out.println("    " + getNome() + " terá seus status atualizados.");
+        System.out.println("    O lutador " + getNome() + " emapatou uma luta.");
+        System.out.println("    " + getNome() + " seus status foram atualizados.");
         System.out.println("");
         System.out.println("");
         System.out.println("--------------------- ENCERRAMENTO DA LUTA --------------------");
