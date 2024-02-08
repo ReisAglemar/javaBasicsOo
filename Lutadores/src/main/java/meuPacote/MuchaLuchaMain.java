@@ -11,7 +11,7 @@ public class MuchaLuchaMain {
         
    //  A clase é vetor   nome do vetor   tamanho do vetor
        LutadoresClasse[] lutadores = new LutadoresClasse[6];
-       
+       LutaClasse combate = new LutaClasse();
        
         
         lutadores[0] = new LutadoresClasse("Pretty Boy", 
@@ -40,10 +40,11 @@ public class MuchaLuchaMain {
             objeto.status();       
         }*/
         
-        LutaClasse combate = new LutaClasse();
+        
        
         combate.marcarLuta(lutadores[0], lutadores[1]);
-        combate.lutar();
+        combate.lutar(4);
         
+               
     }
 }
