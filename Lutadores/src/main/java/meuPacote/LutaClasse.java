@@ -1,4 +1,5 @@
 package meuPacote;
+
 import java.util.Random;
 
 /**
@@ -58,6 +59,7 @@ public class LutaClasse implements LutaFaz {
             setAprovada(true);
             setDesafiado(desafiado);
             setDesafiante(desafiante);
+            System.out.println("");
             System.out.println("   Luta marcada com sucesso!");
 
         } else {
@@ -83,10 +85,14 @@ public class LutaClasse implements LutaFaz {
     }
 
     @Override
-    public void lutar() {
+    public void lutar(int rounds) {
 
+        setRounds(rounds);
         if (isAprovada()) {
-            
+
+            Random numeroRandom = new Random();
+            int empate = 0, vitoriaDesafiante = 0, vitoriaDesafiado = 0;
+
             System.out.println("");
             System.out.println("");
             System.out.println("-------------------- É HORA DO COMBATE DE TITÃS ------------------");
@@ -95,28 +101,108 @@ public class LutaClasse implements LutaFaz {
             System.out.println("    Narrador: - Boa noite senhoras e senhores no combate de hoje temos dois grandes");
             System.out.println("titãs. No lado esquerdo do ring, o desafiante desse confronto,");
             desafiante.apresentar();
-            
+
             System.out.println("");
             System.out.println("    Narrador: - No lado direito do ring o nosso desafiado de hoje,");
             desafiado.apresentar();
-            
+
             System.out.println("    Comentarista: - São dois lutadores marcantes, " + desafiante.getNome());
             System.out.println("tem números impressionantes em sua carreira, vejam só");
             desafiante.status();
-            
-            System.out.println("    Comentarista 2: - Sem dúvidas bons números, mas o " + desafiado.getNome() +","); 
+
+            System.out.println("    Comentarista 2: - Sem dúvidas bons números, mas o " + desafiado.getNome() + ",");
             System.out.println("não deixa a desejar em nada, seus feitos não é para qualquer pessoa");
             desafiado.status();
-            
-            System.out.println("    Narrador: - Certemante, " +desafiante.getNacionalidade() + " e " +desafiado.getNacionalidade());
+
+            System.out.println("    Narrador: - Certemante, " + desafiante.getNacionalidade() + " e " + desafiado.getNacionalidade());
             System.out.println("estão bem representados no combate de hoje.");
             System.out.println("");
-            System.out.println("    Sem mais delongas, que inicie-se o primerio round!");
-            
-            Random numeroRandom = new Random();
-            int ronda = numeroRandom.nextInt(3);
-            System.out.println(ronda);
-            
+            System.out.println("    Sem mais delongas, que inicie-se o combate!");
+            System.out.println("");
+
+            for (int i = 1; i <= getRounds(); i++) {
+                
+                System.out.println("");
+                System.out.println(i + "º ROND");
+
+                int ronda = numeroRandom.nextInt(3);
+
+                switch (ronda) {
+                    case 0:
+                        System.out.println("    Narrador: - Que round difícil! "
+                                + desafiante.getNome() + " e " + desafiado.getNome() + " terminaram empatados.");
+                        empate++;
+                        break;
+
+                    case 1:
+                        System.out.println("    Narrador: - Foi um round bem definido, "
+                                + desafiante.getNome() + " leva a viória nesse round.");
+                        vitoriaDesafiante++;
+                        break;
+
+                    case 2:
+                        System.out.println("    Narrador: - Esse round foi travado, mas o "
+                                + desafiado.getNome() + " leva a melhor nesse round.");
+                        vitoriaDesafiado++;
+                        break;
+                    default:
+                        System.out.println("Erro no no sorteio");
+                }
+            }
+
+            System.out.println("");
+
+            /* PARA TESTAR A LÓGICA. DEVE DESABILITAR O BLOCO FOR
+            empate = 1;
+            vitoriaDesafiado = 0;
+            vitoriaDesafiante = 2;
+             */
+            if (empate == vitoriaDesafiado && vitoriaDesafiado == vitoriaDesafiante
+                    || empate > vitoriaDesafiado && empate > vitoriaDesafiante) {
+
+                System.out.println("    Narrador: - Terminamos esse combate em empate, "
+                        + desafiante.getNome() + " e " + desafiado.getNome() + " monstraram o melhor de si.");
+                System.out.println("");
+
+                desafiado.empatarLuta();
+                desafiante.empatarLuta();
+
+                System.out.println("    Narrador: - Vejamos como ficou os numeros dos noosos lutadores.");
+
+                desafiante.status();
+                desafiado.status();
+
+            } else if (vitoriaDesafiante > vitoriaDesafiado) {
+
+                System.out.println("    Narrador: - Terminamos esse combate com a vitória do "
+                        + desafiante.getNome() + ".");
+                System.out.println("certamente mostrou o melhor de si.");
+                System.out.println("");
+
+                desafiante.ganharLuta();
+                desafiado.perderLuta();
+
+                System.out.println("    Narrador: - Vejamos como ficou os numeros dos noosos lutadores.");
+
+                desafiante.status();
+                desafiado.status();
+
+            } else {
+
+                System.out.println("    Narrador: - Terminamos esse combate com a vitória do "
+                        + desafiado.getNome() + ".");
+                System.out.println("Certamente mostrou o melhor de si.");
+                System.out.println("");
+
+                desafiado.ganharLuta();
+                desafiante.perderLuta();
+
+                System.out.println("    Narrador: - Vejamos como ficou os numeros dos noosos lutadores.");
+                System.out.println("");
+
+                desafiante.status();
+                desafiado.status();
+            }
 
         } else {
             System.out.println("");
