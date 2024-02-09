@@ -6,7 +6,7 @@ package meuPacote;
  * @author reis
  */
 public class MuchaLuchaMain {
-
+    
     public static void main(String[] args) {
         
    //  A clase é vetor   nome do vetor   tamanho do vetor
@@ -40,11 +40,10 @@ public class MuchaLuchaMain {
             objeto.status();       
         }*/
         
-        
        
-        combate.marcarLuta(lutadores[0], lutadores[1]);
-        combate.lutar(4);
-        
-               
+       
+        combate.marcarLuta(lutadores[2], lutadores[3]);
+        combate.lutar(3);
+                      
     }
 }
