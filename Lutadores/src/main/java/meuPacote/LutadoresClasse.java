@@ -146,7 +146,7 @@ public class LutadoresClasse implements LutadoresFazem {
         System.out.println("    Derrotas: " + getDerrotas());
         System.out.println("    Empates: " + getEmpates());
         System.out.println("");
-        System.out.println("---------------------- LUTADOR APRESENTADO --------------------");
+        System.out.println("----------------------------------------------------------------");
         System.out.println("");
     }
 
@@ -165,7 +165,7 @@ public class LutadoresClasse implements LutadoresFazem {
         System.out.println("    Derrotas: " + getDerrotas());
         System.out.println("    Empates: " + getEmpates());
         System.out.println("");
-        System.out.println("--------------------- STATUS APRESENTADOS --------------------");
+        System.out.println("----------------------------------------------------------------");
         System.out.println("");
     }
 
@@ -181,7 +181,7 @@ public class LutadoresClasse implements LutadoresFazem {
         System.out.println("    " + getNome() + " terá seus status atualizados.");
         System.out.println("");
         System.out.println("");
-        System.out.println("--------------------- ENCERRAMENTO DA LUTA --------------------");
+        System.out.println("----------------------------------------------------------------");
         System.out.println("");
     }
 
@@ -197,7 +197,7 @@ public class LutadoresClasse implements LutadoresFazem {
         System.out.println("    " + getNome() + " terá seus status atualizados.");
         System.out.println("");
         System.out.println("");
-        System.out.println("--------------------- ENCERRAMENTO DA LUTA --------------------");
+        System.out.println("----------------------------------------------------------------");
         System.out.println("");
     }
 
@@ -213,7 +213,7 @@ public class LutadoresClasse implements LutadoresFazem {
         System.out.println("    " + getNome() + " seus status foram atualizados.");
         System.out.println("");
         System.out.println("");
-        System.out.println("--------------------- ENCERRAMENTO DA LUTA --------------------");
+        System.out.println("----------------------------------------------------------------");
         System.out.println("");
     }
 }
