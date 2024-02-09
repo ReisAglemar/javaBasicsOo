@@ -121,7 +121,7 @@ public class LutaClasse implements LutaFaz {
             System.out.println("");
 
             for (int i = 1; i <= getRounds(); i++) {
-                
+
                 System.out.println("");
                 System.out.println(i + "º ROND");
 
@@ -202,6 +202,8 @@ public class LutaClasse implements LutaFaz {
 
                 desafiante.status();
                 desafiado.status();
+                System.out.println("---------------------- FIM DO COMBATE DE TITÃS --------------------");
+
             }
 
         } else {
