@@ -11,19 +11,21 @@ public class Exercicios {
         Pessoa[] pessoas = new Pessoa[3];
         Livro[] livros = new Livro[3];
 
-        pessoas[0] = new Pessoa("Reis", 33, 'M');
-        pessoas[1] = new Pessoa("Zarpelon", 31, 'F');
-        pessoas[2] = new Pessoa("De Marchi", 12, 'F');
+        pessoas[0] = new Pessoa("Reis", 0, 33, 'M');
+        pessoas[1] = new Pessoa("Zarpelon", 1, 31, 'F');
+        pessoas[2] = new Pessoa("De Marchi", 2, 12, 'F');
 
-        livros[0] = new Livro("Programas Não Esquecidos", "Java", 128, pessoas[0]);
-        livros[1] = new Livro("A Arte Moderna", "CSS", 256, pessoas[1]);
-        livros[2] = new Livro("Marcações Profundas", "HTML", 64, pessoas[2]);
+        livros[0] = new Livro("Programas Não Esquecidos", "Java", 128);
+        livros[1] = new Livro("A Arte Moderna", "CSS", 256);
+        livros[2] = new Livro("Marcações Profundas", "HTML", 64);
 
-        livros[0].avançarPagina();
-        livros[0].abrir();
-        livros[0].avançarPagina();        
-        livros[0].avançarPagina();
+        for (Livro livro : livros) {
+            livro.detalhes();
+        }
         
-
+        pessoas[0].fazerAniversario();
+        livros[0].getLeitor();
+        livros[0].setLeitor(pessoas[0]);
+        livros[0].detalhes();
     }
 }
