@@ -11,11 +11,10 @@ public class Livro implements Publicacao {
     private boolean aberto;
     private Pessoa leitor;
 
-    public Livro(String titulo, String autor, int totalPaginas, Pessoa leitor) {
+    public Livro(String titulo, String autor, int totalPaginas) {
         this.titulo = titulo;
         this.autor = autor;
         this.totalPaginas = totalPaginas;
-        this.leitor = leitor;
     }
 
     public void setTitulo(String titulo) {
@@ -63,7 +62,15 @@ public class Livro implements Publicacao {
     }
 
     public String getLeitor() {
-        return leitor.getNome();
+
+        if (this.leitor != null) {
+            return leitor.getNome();
+        } else {
+            System.out.println("");
+            System.out.println("    " + getTitulo() + "não está sendo lido");
+            System.out.println("");
+        }
+        return "";
     }
 
     public void detalhes() {
@@ -76,7 +83,12 @@ public class Livro implements Publicacao {
         System.out.println("    Total de páginas: " + getTotalPaginas());
         System.out.println("    Página atual: " + getPaginaAtual());
         System.out.println("    Livro aberto? " + isAberto());
-        System.out.println("    Seu leitor atual é: " + getLeitor());
+
+        if (this.leitor != null) {
+            System.out.println("    Seu leitor atual é: " + getLeitor());
+        } else {
+            System.out.println("    O livro não possuí leitor no momento");
+        }
         System.out.println("");
         System.out.println("------------------------------------------------");
     }
@@ -115,7 +127,7 @@ public class Livro implements Publicacao {
     public void folhar() {
 
         if (isAberto()) {
-            for (int i = 0; i <= getTotalPaginas(); i++) {
+            for (int i = 1; i <= getTotalPaginas(); i++) {
                 System.out.println("Pág: " + i);
             }
             System.out.println("");
@@ -171,4 +183,10 @@ public class Livro implements Publicacao {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Livro{" + "\ntitulo: " + titulo + ", \nautor: " + autor + ""
+                + ", \ntotalPaginas: " + totalPaginas + ", \npaginaAtual: " + paginaAtual + ""
+                + ", \naberto: " + aberto + ", \nleitor: " + leitor + "\n" + '}';
+    }
 }
