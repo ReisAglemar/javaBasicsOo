@@ -4,7 +4,7 @@ package com.reis.herancapt2;
  *
  * @author reis
  */
-public class Bolsista extends Aluno{
+public final class Bolsista extends Aluno{
     
     private int bolsa;
         
@@ -16,7 +16,8 @@ public class Bolsista extends Aluno{
     @Override
     public String pagarMensalidade(){
         return "\n    A mensalidade do aluno bolsista " + getNome() + "\ninscrito no curos "
-                + getCurso() + " foi paga com sucesso.\n";
+                + getCurso() + " foi paga com sucesso.\n"
+                + getNome() + " tem " + getBolsa() + "% de bolsa.\n";
     }
 
     public Bolsista() {
