@@ -1,10 +1,7 @@
-<<<<<<< HEAD
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-=======
->>>>>>> mudancas
 package com.reis.polimorfismo;
 
 /**
@@ -14,9 +11,6 @@ package com.reis.polimorfismo;
 public class Polimorfismo {
 
     public static void main(String[] args) {
-<<<<<<< HEAD
-        System.out.println("Hello World!");
-=======
 
         Mamifero mamifero = new Mamifero();
         Reptil reptil = new Reptil();
@@ -210,6 +204,5 @@ public class Polimorfismo {
         System.out.println(arara.getCorDaPena());
         System.out.println(arara.fazerNinho());
         System.out.println("");
->>>>>>> mudancas
     }
 }
