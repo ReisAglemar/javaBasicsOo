@@ -22,7 +22,7 @@ public class Exercicios {
         for (Livro livro : livros) {
             livro.detalhes();
         }
-        
+
         pessoas[0].fazerAniversario();
         livros[0].getLeitor();
         livros[0].setLeitor(pessoas[0]);
